@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Hydration Tracker</string>
+    <string name="daily_balance">Daily Balance</string>
+    <string name="current_amount">%d ml out of %dml</string>
+    <string name="water_added">%s Added</string>
+    <string name="undo">Undo</string>
+    <string name="more_option">More</string>
+    <string name="all_option">All Options</string>
+    <string name="application_settings">Application Settings</string>
+    <string name="settings_goal_amount">Goals Amount</string>
+    <string name="settings_edit_goal_amount">Edit Goals Amount</string>
+    <string name="settings">Settings</string>
+
+<!--/////////////////////////-->
+    <string name="settings_weight">Weight</string>
+    <string name="settings_edit_weight">Edit Weight</string>
+    <string name="settings_height">Height</string>
+    <string name="settings_edit_height">Edit Height</string>
+    <string name="settings_wake_up_time">Wake Up Time</string>
+    <string name="settings_edit_wake_up_time">Edit Wake Up Time</string>
+    <string name="settings_sleep_time">Sleep Time</string>
+    <string name="settings_edit_sleep_time">Edit Sleep Time</string>
+</resources>
