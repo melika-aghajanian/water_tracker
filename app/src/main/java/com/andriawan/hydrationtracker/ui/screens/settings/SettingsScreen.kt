@@ -35,11 +35,25 @@ fun SettingsScreen(
             SettingHeader(title = stringResource(id = R.string.application_settings))
             Column {
                 Setting(
+                    title = stringResource(id = R.string.settings_user_name),
+                    value = state.userName.toString(),
+                    onItemClicked = {
+                        showDialog = true
+                    //    dialogTitle = stringResource(id = R.string.settings_user_name)
+                        dialogValue = state.userName
+                        dialogOnSubmit = { newValue ->
+                            viewModel.saveNewUserName(newValue)
+                            showDialog = false
+                        }
+                    }
+                )
+
+                Setting(
                     title = stringResource(id = R.string.settings_goal_amount),
                     value = state.dailyGoals.toString(),
                     onItemClicked = {
                         showDialog = true
-                    //    dialogTitle = stringResource(id = R.string.settings_edit_goal_amount)
+                   //     dialogTitle = stringResource(id = R.string.settings_goal_amount)
                         dialogValue = state.dailyGoals.toString()
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewGoals(newValue.toInt())
@@ -53,7 +67,7 @@ fun SettingsScreen(
                     value = state.weight.toString(),
                     onItemClicked = {
                         showDialog = true
-                    //    dialogTitle = stringResource(id = R.string.settings_edit_weight)
+                    //    dialogTitle = stringResource(id = R.string.settings_weight)
                         dialogValue = state.weight.toString()
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewWeight(newValue.toInt())
@@ -67,7 +81,7 @@ fun SettingsScreen(
                     value = state.height.toString(),
                     onItemClicked = {
                         showDialog = true
-//                        dialogTitle = stringResource(id = R.string.settings_edit_height)
+                    //    dialogTitle = stringResource(id = R.string.settings_height)
                         dialogValue = state.height.toString()
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewHeight(newValue.toInt())
@@ -81,7 +95,7 @@ fun SettingsScreen(
                     value = state.wakeUpTime,
                     onItemClicked = {
                         showDialog = true
-                    //    dialogTitle = stringResource(id = R.string.settings_edit_wake_up_time)
+                    //    dialogTitle = stringResource(id = R.string.settings_wake_up_time)
                         dialogValue = state.wakeUpTime
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewWakeUpTime(newValue)
@@ -95,7 +109,7 @@ fun SettingsScreen(
                     value = state.sleepTime,
                     onItemClicked = {
                         showDialog = true
-                    //    dialogTitle = stringResource(id = R.string.settings_edit_sleep_time)
+                    //    dialogTitle = stringResource(id = R.string.settings_sleep_time)
                         dialogValue = state.sleepTime
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewSleepTime(newValue)

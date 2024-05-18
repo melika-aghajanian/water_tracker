@@ -12,7 +12,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.andriawan.hydrationtracker.theme.HydrationTrackerTheme
 
 @Composable
 fun DialogEditValue(
@@ -47,7 +46,7 @@ fun DialogEditValue(
                         Text(text = "Please enter a new value")
                     },
                     keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Number
+                        keyboardType = KeyboardType.Text // Set keyboard type to Text
                     ),
                     textStyle = MaterialTheme.typography.body1,
                     modifier = Modifier.fillMaxWidth()
@@ -90,13 +89,5 @@ fun DialogEditValue(
                 }
             }
         }
-    }
-}
-
-@Preview
-@Composable
-fun DialogEditValuePreview() {
-    HydrationTrackerTheme {
-        DialogEditValue(title = "Hello", value = "100", onSubmit = {}, onDismiss = {})
     }
 }

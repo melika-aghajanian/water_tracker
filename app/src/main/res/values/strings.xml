@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hydration Tracker</string>
+    <string name="app_name">Water Tracker</string>
     <string name="daily_balance">Daily Balance</string>
     <string name="current_amount">%d ml out of %dml</string>
     <string name="water_added">%s Added</string>
@@ -12,6 +12,8 @@
     <string name="settings">Settings</string>
 
 <!--/////////////////////////-->
+    <string name="settings_user_name">User Name</string>
+
     <string name="settings_weight">Weight</string>
     <string name="settings_edit_weight">Edit Weight</string>
     <string name="settings_height">Height</string>
