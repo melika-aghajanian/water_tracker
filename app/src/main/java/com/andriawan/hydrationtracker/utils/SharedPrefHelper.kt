@@ -9,6 +9,7 @@ object SharedPrefHelper {
 
     private const val PREF_NAME = "hydration-preferences"
     const val PREF_USER_NAME = "userName"
+    const val PREF_WORK_OUT = "workOut"
     const val PREF_DAILY_GOAL = "daily_goal"
     const val PREF_WEIGHT = "weight"
     const val PREF_HEIGHT = "height"

@@ -20,6 +20,7 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
 
     private fun initData() {
         val userName = SharedPrefHelper.readString(SharedPrefHelper.PREF_USER_NAME, "")
+        val workOut = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WORK_OUT,0)
         val dailyGoals = SharedPrefHelper.readInt(SharedPrefHelper.PREF_DAILY_GOAL, SharedPrefHelper.DEFAULT_DAILY_GOAL)
         val weight = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WEIGHT, 0)
         val height = SharedPrefHelper.readInt(SharedPrefHelper.PREF_HEIGHT, 0)
@@ -28,6 +29,7 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
 
         state = state.copy(
             userName = userName,
+            workOut = workOut,
             dailyGoals = dailyGoals,
             weight = weight,
             height = height,
@@ -39,6 +41,11 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
     fun saveNewUserName(newUserName: String) {
         SharedPrefHelper.saveString(SharedPrefHelper.PREF_USER_NAME, newUserName)
         state = state.copy(userName = newUserName)
+    }
+
+    fun saveNewWorkOut(newWorkOut: Int) {
+        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_DAILY_GOAL, newWorkOut)
+        state = state.copy(workOut = newWorkOut)
     }
 
     fun saveNewGoals(newGoals: Int) {

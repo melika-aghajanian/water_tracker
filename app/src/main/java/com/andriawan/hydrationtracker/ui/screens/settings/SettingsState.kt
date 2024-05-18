@@ -8,9 +8,10 @@ import com.andriawan.hydrationtracker.utils.SharedPrefHelper
 
 data class SettingsState(
     val userName: String = "",
-    val dailyGoals: Int = 2700,
+    val workOut: Int = 0,
     val weight: Int = 0,
     val height: Int = 0,
     val wakeUpTime: String = "",
-    val sleepTime: String = ""
+    val sleepTime: String = "",
+    val dailyGoals: Int = 2700
 )

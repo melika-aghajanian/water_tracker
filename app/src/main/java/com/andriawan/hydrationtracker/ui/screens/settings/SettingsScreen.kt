@@ -34,13 +34,14 @@ fun SettingsScreen(
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SettingHeader(title = stringResource(id = R.string.application_settings))
             Column {
+
                 Setting(
                     title = stringResource(id = R.string.settings_user_name),
                     value = state.userName.toString(),
                     onItemClicked = {
                         showDialog = true
                     //    dialogTitle = stringResource(id = R.string.settings_user_name)
-                        dialogValue = state.userName
+                        dialogValue = state.userName.toString()
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewUserName(newValue)
                             showDialog = false
@@ -49,14 +50,14 @@ fun SettingsScreen(
                 )
 
                 Setting(
-                    title = stringResource(id = R.string.settings_goal_amount),
-                    value = state.dailyGoals.toString(),
+                    title = stringResource(id = R.string.settings_work_out),
+                    value = state.workOut.toString(),
                     onItemClicked = {
                         showDialog = true
-                   //     dialogTitle = stringResource(id = R.string.settings_goal_amount)
-                        dialogValue = state.dailyGoals.toString()
+                        //    dialogTitle = stringResource(id = R.string.settings_work_out)
+                        dialogValue = state.workOut.toString()
                         dialogOnSubmit = { newValue ->
-                            viewModel.saveNewGoals(newValue.toInt())
+                            viewModel.saveNewWorkOut(newValue.toInt())
                             showDialog = false
                         }
                     }
@@ -113,6 +114,20 @@ fun SettingsScreen(
                         dialogValue = state.sleepTime
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewSleepTime(newValue)
+                            showDialog = false
+                        }
+                    }
+                )
+
+                Setting(
+                    title = stringResource(id = R.string.settings_goal_amount),
+                    value = state.dailyGoals.toString(),
+                    onItemClicked = {
+                        showDialog = true
+                        //     dialogTitle = stringResource(id = R.string.settings_goal_amount)
+                        dialogValue = state.dailyGoals.toString()
+                        dialogOnSubmit = { newValue ->
+                            viewModel.saveNewGoals(newValue.toInt())
                             showDialog = false
                         }
                     }

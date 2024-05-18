@@ -13,10 +13,10 @@
 
 <!--/////////////////////////-->
     <string name="settings_user_name">User Name</string>
-
+    <string name="settings_work_out">Work Out</string>
     <string name="settings_weight">Weight</string>
-    <string name="settings_edit_weight">Edit Weight</string>
     <string name="settings_height">Height</string>
+    <string name="settings_edit_weight">Edit Weight</string>
     <string name="settings_edit_height">Edit Height</string>
     <string name="settings_wake_up_time">Wake Up Time</string>
     <string name="settings_edit_wake_up_time">Edit Wake Up Time</string>
