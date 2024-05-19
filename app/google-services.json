@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:888672293656:android:9a7dd333525c567e1f046d",
         "android_client_info": {
-          "package_name": "com.andriawan.hydrationtracker"
+          "package_name": "com.example.water_reminder"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "888672293656-sklrj400mgerf9psglnq0rnj9su0psd6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.andriawan.hydrationtracker",
+            "package_name": "com.example.water_reminder",
             "certificate_hash": "1b28a3fa95ebe1fb9bd413bf69ee63c3f6e43850"
           }
         },
