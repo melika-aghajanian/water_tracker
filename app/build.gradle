@@ -14,13 +14,13 @@ android {
     compileSdk versions.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.andriawan.hydrationtracker"
+        applicationId "com.example.water_reminder"
         minSdk versions.minSdkVersion
         targetSdk versions.targetSdkVersion
         versionCode versions.versionCode
         versionName versions.versionName
 
-        testInstrumentationRunner "com.andriawan.hydrationtracker.HiltTestRunner"
+        testInstrumentationRunner "com.example.water_reminder.HiltTestRunner"
     }
 
     buildTypes {

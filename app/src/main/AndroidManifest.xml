@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.andriawan.hydrationtracker">
+    package="com.example.water_reminder">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HydrationTracker.Starting"
+        android:theme="@style/Theme.WaterReminder.Starting"
         android:name=".MyApplication">
 
         <activity
