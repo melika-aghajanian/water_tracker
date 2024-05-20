@@ -1,4 +1,4 @@
-package com.andriawan.hydrationtracker.ui.screens.home
+package com.andriawan.water_reminder.ui.screens.home
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.background
@@ -21,13 +21,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
-import com.andriawan.hydrationtracker.R
-import com.andriawan.hydrationtracker.data.models.DrinkType
-import com.andriawan.hydrationtracker.theme.HydrationTrackerTheme
-import com.andriawan.hydrationtracker.ui.components.*
-import com.andriawan.hydrationtracker.utils.Constants.ANALYTICS_ADD_WATER
-import com.andriawan.hydrationtracker.utils.Constants.ANALYTICS_OTHER_OPTION
-import com.andriawan.hydrationtracker.utils.Constants.ANALYTICS_REDUCE_WATER
+import com.andriawan.water_reminder.R
+import com.andriawan.water_reminder.data.models.DrinkType
+import com.andriawan.water_reminder.theme.water_reminderTheme
+import com.andriawan.water_reminder.ui.components.*
+import com.andriawan.water_reminder.utils.Constants.ANALYTICS_ADD_WATER
+import com.andriawan.water_reminder.utils.Constants.ANALYTICS_OTHER_OPTION
+import com.andriawan.water_reminder.utils.Constants.ANALYTICS_REDUCE_WATER
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.ktx.logEvent
