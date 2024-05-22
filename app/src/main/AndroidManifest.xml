@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.water_reminder">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
@@ -25,7 +26,11 @@
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
             tools:node="remove" />
-
+        <service
+            android:name=".notification.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver android:name=".notification.NotificationReceiver" />
     </application>
 
 </manifest>

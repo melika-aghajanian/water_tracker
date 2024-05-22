@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.water_reminder.R
+import com.example.water_reminder.notification.NotificationReceiver
 import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.ui.components.DialogEditValue
 import com.example.water_reminder.ui.components.Setting
@@ -128,6 +129,25 @@ fun SettingsScreen(
                         dialogValue = state.dailyGoals.toString()
                         dialogOnSubmit = { newValue ->
                             viewModel.saveNewGoals(newValue.toInt())
+                            showDialog = false
+                        }
+                    }
+                )
+
+                // New setting for reminder interval
+                Setting(
+                    title = stringResource(id = R.string.settings_reminder_interval),
+                    value = state.reminderInterval.toString(),
+                    onItemClicked = {
+                        showDialog = true
+//                        dialogTitle = stringResource(id = R.string.settings_reminder_interval)
+                        dialogValue = state.reminderInterval.toString()
+                        dialogOnSubmit = { newValue ->
+                            val newInterval = newValue.toIntOrNull()
+                            if (newInterval != null) {
+                                viewModel.saveNewReminderInterval(newInterval)
+                            }
+
                             showDialog = false
                         }
                     }

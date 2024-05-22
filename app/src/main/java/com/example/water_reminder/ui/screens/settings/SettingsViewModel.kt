@@ -1,16 +1,21 @@
 package com.example.water_reminder.ui.screens.settings
 
+import android.app.Application
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.water_reminder.notification.NotificationReceiver
 import com.example.water_reminder.utils.SharedPrefHelper
+import dagger.hilt.android.internal.Contexts.getApplication
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SettingsViewModel @Inject constructor() : ViewModel() {
+class SettingsViewModel @Inject constructor(
+    private val application: Application
 
+) : ViewModel() {
     var state by mutableStateOf(SettingsState())
         private set
 
@@ -26,6 +31,7 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
         val height = SharedPrefHelper.readInt(SharedPrefHelper.PREF_HEIGHT, 0)
         val wakeUpTime = SharedPrefHelper.readString(SharedPrefHelper.PREF_WAKE_UP_TIME, "")
         val sleepTime = SharedPrefHelper.readString(SharedPrefHelper.PREF_SLEEP_TIME, "")
+        val reminderInterval = SharedPrefHelper.readInt(SharedPrefHelper.PREF_REMINDER_INTERVAL, 0)
 
         state = state.copy(
             userName = userName,
@@ -34,7 +40,8 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
             weight = weight,
             height = height,
             wakeUpTime = wakeUpTime,
-            sleepTime = sleepTime
+            sleepTime = sleepTime,
+            reminderInterval = reminderInterval
         )
     }
 
@@ -72,4 +79,14 @@ class SettingsViewModel @Inject constructor() : ViewModel() {
         SharedPrefHelper.saveString(SharedPrefHelper.PREF_SLEEP_TIME, newSleepTime)
         state = state.copy(sleepTime = newSleepTime)
     }
+
+    fun saveNewReminderInterval(newInterval: Int) {
+        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_REMINDER_INTERVAL, newInterval)
+        state = state.copy(reminderInterval = newInterval)
+        // Reschedule the alarm
+        val context = application.applicationContext
+        val receiver = NotificationReceiver()
+        receiver.scheduleNextAlarm(context)
+    }
+
 }
