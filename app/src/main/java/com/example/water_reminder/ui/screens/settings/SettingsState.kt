@@ -11,5 +11,7 @@ data class SettingsState(
     val height: Int = 0,
     val wakeUpTime: String = "",
     val sleepTime: String = "",
-    val dailyGoals: Int = 0
+    val dailyGoals: Int = 0,
+    val reminderInterval: Int = 30
+
 )
