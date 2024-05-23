@@ -6,7 +6,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.water_reminder.ui.screens.history.HistoryScreen
-import com.example.water_reminder.ui.screens.history.HistoryScreen
 import com.example.water_reminder.ui.screens.home.HomeScreen
 import com.example.water_reminder.ui.screens.settings.SettingsScreen
 import com.example.water_reminder.utils.navigation.Routes

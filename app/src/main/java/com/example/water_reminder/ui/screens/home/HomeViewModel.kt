@@ -6,11 +6,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.andriawan.water_reminder.data.models.DailyHistory
-import com.andriawan.water_reminder.data.repository.DailyHistoryRepository
-import com.andriawan.water_reminder.utils.DateFormatter
-import com.andriawan.water_reminder.utils.DrinkTypeData
-import com.andriawan.water_reminder.utils.SharedPrefHelper
+import com.example.water_reminder.data.models.DailyHistory
+import com.example.water_reminder.data.repository.DailyHistoryRepository
+import com.example.water_reminder.utils.DateFormatter
+import com.example.water_reminder.utils.DrinkTypeData
+import com.example.water_reminder.utils.SharedPrefHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.text.DateFormat

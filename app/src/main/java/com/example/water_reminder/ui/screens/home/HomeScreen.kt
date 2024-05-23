@@ -21,19 +21,27 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
-import com.andriawan.water_reminder.R
-import com.andriawan.water_reminder.data.models.DrinkType
-import com.andriawan.water_reminder.theme.water_reminderTheme
-import com.andriawan.water_reminder.ui.components.*
-import com.andriawan.water_reminder.utils.Constants.ANALYTICS_ADD_WATER
-import com.andriawan.water_reminder.utils.Constants.ANALYTICS_OTHER_OPTION
-import com.andriawan.water_reminder.utils.Constants.ANALYTICS_REDUCE_WATER
+import com.example.water_reminder.R
+import com.example.water_reminder.data.models.DrinkType
+import com.example.water_reminder.theme.WaterReminderTheme
+import com.example.water_reminder.ui.components.*
+
+import com.example.water_reminder.utils.Constants.ANALYTICS_ADD_WATER
+import com.example.water_reminder.utils.Constants.ANALYTICS_OTHER_OPTION
+import com.example.water_reminder.utils.Constants.ANALYTICS_REDUCE_WATER
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 import java.util.*
+
+import androidx.compose.runtime.Composable
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.DisposableEffect
+
 
 @ExperimentalMaterialApi
 @Composable
@@ -283,7 +291,7 @@ private fun OptionList(
 @Preview
 @Composable
 fun HomeScreenPreview() {
-    HydrationTrackerTheme {
+    WaterReminderTheme {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
@@ -297,7 +305,7 @@ fun HomeScreenPreview() {
 @Preview(uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun HomeScreenPreviewDarkMode() {
-    HydrationTrackerTheme {
+    WaterReminderTheme {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
