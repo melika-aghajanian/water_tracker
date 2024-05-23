@@ -42,7 +42,7 @@ class SettingsViewModel @Inject constructor(
             height = height,
             wakeUpTime = wakeUpTime,
             sleepTime = sleepTime,
-            reminderInterval = reminderInterval
+            reminderInterval = reminderInterval,
             dailyGoals = dailyGoals
 
         )
