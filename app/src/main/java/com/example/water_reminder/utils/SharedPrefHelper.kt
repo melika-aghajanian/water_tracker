@@ -15,8 +15,9 @@ object SharedPrefHelper {
     const val PREF_HEIGHT = "height"
     const val PREF_WAKE_UP_TIME = "wake_up_time"
     const val PREF_SLEEP_TIME = "sleep_time"
-    const val DEFAULT_DAILY_GOAL = 2700
+    //const val DEFAULT_DAILY_GOAL = 2700
     const val PREF_REMINDER_INTERVAL = "reminderInterval"
+
 
     fun initialize(context: Context) {
         if (sharedPreferences == null) {
