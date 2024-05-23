@@ -1,4 +1,4 @@
-package com.andriawan.water_reminder.ui.screens.home
+package com.example.water_reminder.ui.screens.home
 
 import com.example.water_reminder.data.models.DailyHistory
 import com.example.water_reminder.data.models.DrinkType

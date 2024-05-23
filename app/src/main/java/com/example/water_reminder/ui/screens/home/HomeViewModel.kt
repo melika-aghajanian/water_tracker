@@ -1,4 +1,4 @@
-package com.andriawan.water_reminder.ui.screens.home
+package com.example.water_reminder.ui.screens.home
 
 import android.util.Log
 import androidx.compose.runtime.getValue

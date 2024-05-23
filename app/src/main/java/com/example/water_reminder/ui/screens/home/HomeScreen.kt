@@ -1,4 +1,4 @@
-package com.andriawan.water_reminder.ui.screens.home
+package com.example.water_reminder.ui.screens.home
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.background
@@ -41,7 +41,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.DisposableEffect
-
 
 @ExperimentalMaterialApi
 @Composable
