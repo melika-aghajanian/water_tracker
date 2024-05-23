@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.water_reminder.ui.screens.history.HistoryScreen
-import com.example.water_reminder.ui.screens.home.HomeScreen
+//import com.example.water_reminder.ui.screens.history.HistoryScreen
+//import com.example.water_reminder.ui.screens.home.HomeScreen
 import com.example.water_reminder.ui.screens.settings.SettingsScreen
 import com.example.water_reminder.utils.navigation.Routes
 
@@ -21,7 +21,7 @@ fun AppNavGraph(
     ) {
 
         composable(Routes.HomePage.routeName) {
-            HomeScreen()
+//            HomeScreen()
         }
 
         composable(Routes.SettingsPage.routeName) {
@@ -29,7 +29,7 @@ fun AppNavGraph(
         }
 
         composable(Routes.HistoryPage.routeName) {
-            HistoryScreen()
+//            HistoryScreen()
         }
     }
 }
