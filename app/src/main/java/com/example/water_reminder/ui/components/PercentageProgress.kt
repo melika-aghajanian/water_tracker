@@ -27,6 +27,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.water_reminder.theme.WaterReminderTheme
 
+/**
+ * Composable function for displaying a circular progress indicator with a percentage value.
+ *
+ * @param value The current progress value.
+ * @param maxValue The maximum value of the progress.
+ * @param progressSize The size of the circular progress indicator.
+ * @param foregroundStrokeWidth The width of the foreground stroke.
+ * @param backgroundStrokeWidth The width of the background stroke.
+ * @param indicatorForegroundColor The color of the foreground progress indicator.
+ * @param indicatorBackgroundColor The color of the background progress indicator.
+ */
 @Composable
 fun PercentageProgress(
     value: Int,

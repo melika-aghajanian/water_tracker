@@ -16,6 +16,12 @@ import androidx.compose.ui.unit.dp
 import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.R
 
+/**
+ * Composable function for rendering a history item.
+ *
+ * @param date The date associated with the history item.
+ * @param value The value associated with the history item.
+ */
 @Composable
 fun HistoryItem(
     date: String,
@@ -56,6 +62,9 @@ fun HistoryItem(
     }
 }
 
+/**
+ * Preview function for the HistoryItem composable.
+ */
 @Preview
 @Composable
 fun HistoryItemPreview() {

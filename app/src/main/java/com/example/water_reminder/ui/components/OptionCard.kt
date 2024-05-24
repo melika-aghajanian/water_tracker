@@ -22,6 +22,17 @@ import com.example.water_reminder.R
 import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.theme.TestColor
 
+/**
+ * Composable function for rendering an option card.
+ *
+ * @param onCardClicked The callback to be invoked when the card is clicked.
+ * @param title The title of the option card.
+ * @param icon The icon resource of the option card.
+ * @param modifier The modifier for the option card.
+ * @param type The type of the option card.
+ * @param backgroundColor The background color of the option card.
+ * @param textColor The text color of the option card.
+ */
 @Composable
 fun OptionCard(
     onCardClicked: () -> Unit,
@@ -64,6 +75,9 @@ fun OptionCard(
     }
 }
 
+/**
+ * Enum class representing the type of option card.
+ */
 enum class OptionType {
     COMMON_OPTION,
     MORE_OPTION

@@ -8,8 +8,18 @@ import com.example.water_reminder.worker.HistoryAddWorker
 import java.util.*
 import java.util.concurrent.TimeUnit
 
+/**
+ * Utility object for managing worker tasks.
+ * This object provides functions to create and manage worker tasks, particularly for adding drink history.
+ */
 object WorkerHelper {
 
+    /**
+     * Creates a worker task for adding drink history.
+     *
+     * @param context The context used to access the WorkManager.
+     * @param scheduleType The type of scheduling for the worker task.
+     */
     fun createHistoryDrinkWorker(context: Context, scheduleType: ScheduleType) {
         val historyAddWorkerRequest = OneTimeWorkRequestBuilder<HistoryAddWorker>()
 
@@ -36,8 +46,18 @@ object WorkerHelper {
         )
     }
 
+    /**
+     * Enum class representing the type of scheduling for worker tasks.
+     */
     enum class ScheduleType {
+        /**
+         * Immediate execution of the task.
+         */
         NOW,
+
+        /**
+         * Scheduled execution of the task.
+         */
         SCHEDULED
     }
 }

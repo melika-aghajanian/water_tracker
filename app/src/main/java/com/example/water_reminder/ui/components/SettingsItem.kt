@@ -18,6 +18,11 @@ import androidx.compose.ui.unit.dp
 import com.example.water_reminder.R
 import com.example.water_reminder.theme.WaterReminderTheme
 
+/**
+ * Composable function for displaying a setting header with the specified [title].
+ *
+ * @param title The title of the setting header.
+ */
 @Composable
 fun SettingHeader(
     title: String
@@ -30,6 +35,14 @@ fun SettingHeader(
     }
 }
 
+/**
+ * Composable function for displaying a setting item with the specified [title], [value], and [onItemClicked] action.
+ *
+ * @param backgroundColor The background color of the setting item.
+ * @param title The title of the setting item.
+ * @param value The value of the setting item, nullable.
+ * @param onItemClicked The action to be executed when the setting item is clicked.
+ */
 @Composable
 fun Setting(
     backgroundColor: Color = Color.White,

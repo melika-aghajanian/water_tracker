@@ -12,7 +12,11 @@ import com.example.water_reminder.R
 import com.example.water_reminder.ui.components.DialogEditValue
 import com.example.water_reminder.ui.components.Setting
 import com.example.water_reminder.ui.components.SettingHeader
-
+/**
+ * Composable function for the Settings screen.
+ *
+ * @param viewModel ViewModel for managing the Settings screen.
+ */
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel = hiltViewModel()
@@ -162,7 +166,9 @@ fun SettingsScreen(
         )
     }
 }
-
+/**
+ * Composable function for the top bar of the Settings screen.
+ */
 @Composable
 fun SettingsPageTopBar() {
     Text(

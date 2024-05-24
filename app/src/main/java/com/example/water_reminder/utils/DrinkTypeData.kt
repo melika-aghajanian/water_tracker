@@ -3,8 +3,17 @@ package com.example.water_reminder.utils
 import com.example.water_reminder.R
 import com.example.water_reminder.data.models.DrinkType
 
+/**
+ * Utility object for providing data related to drink types.
+ * This object provides a function to retrieve a list of predefined drink types.
+ */
 object DrinkTypeData {
 
+    /**
+     * Retrieves a list of predefined drink types.
+     *
+     * @return A list of [DrinkType] objects representing different drink types with their names, amounts, and icons.
+     */
     fun getData(): List<DrinkType> {
         return listOf(
             DrinkType(

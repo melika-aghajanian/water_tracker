@@ -17,19 +17,27 @@ import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.theme.OnPrimaryColor
 import com.example.water_reminder.utils.navigation.Routes
 
+/**
+ * Composable function for rendering the bottom navigation bar.
+ *
+ * @param navController The NavHostController used for navigation.
+ */
 @Composable
 fun AppBottomNav(
     navController: NavHostController
 ) {
+    // List of bottom navigation items
     val bottomNavList = listOf(
         Routes.HistoryPage,
         Routes.HomePage,
         Routes.SettingsPage
     )
 
+    // Get the current route from the navigation controller
     val navBackstackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackstackEntry?.destination?.route
 
+    // Bottom navigation bar
     BottomNavigation(
         backgroundColor = MaterialTheme.colors.primaryVariant,
         elevation = 0.dp
@@ -59,6 +67,9 @@ fun AppBottomNav(
     }
 }
 
+/**
+ * Preview function for the AppBottomNav composable.
+ */
 @Preview
 @Composable
 fun AppBottomNavPreview() {

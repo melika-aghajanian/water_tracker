@@ -15,14 +15,23 @@ import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
 
+/**
+ * ViewModel for managing the state and logic of the HomeScreen.
+ *
+ * @property dailyHistoryRepository The repository for accessing daily history data.
+ */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val dailyHistoryRepository: DailyHistoryRepository
 ) : ViewModel() {
 
+    // Mutable state to hold the current state of the home screen
     var state by mutableStateOf(HomeState())
         private set
 
+    /**
+     * Initializes the available drink types.
+     */
     fun initDrinkType() {
         val totalAmount = SharedPrefHelper.readInt(SharedPrefHelper.PREF_DAILY_GOAL, 2700)
         state = state.copy(
@@ -31,6 +40,9 @@ class HomeViewModel @Inject constructor(
         )
     }
 
+    /**
+     * Initializes the data, including the history and percentage of daily water intake completion.
+     */
     fun initData() {
         viewModelScope.launch {
             val date = DateFormatter.formatDate(Date()) ?: Date()
@@ -44,6 +56,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Adds water to the daily water intake total.
+     *
+     * @param amount The amount of water to add.
+     */
     fun addWater(amount: Int) {
         if (state.history == null) {
             initData()
@@ -57,6 +74,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    /**
+     * Reduces water from the daily water intake total.
+     *
+     * @param amount The amount of water to reduce.
+     */
     fun reduceWater(amount: Int) {
         if (state.history == null) {
             initData()

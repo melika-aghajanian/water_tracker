@@ -17,6 +17,11 @@ import androidx.compose.ui.unit.dp
 import com.example.water_reminder.R
 import com.example.water_reminder.theme.SecondaryColor
 
+/**
+ * Composable function for rendering a custom snackbar.
+ *
+ * @param snackbarHostState The state holder for the SnackbarHost.
+ */
 @Composable
 fun CustomSnackbar(
     snackbarHostState: SnackbarHostState

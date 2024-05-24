@@ -10,19 +10,29 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel for managing the state and data of the HistoryScreen.
+ *
+ * @property historyRepository The repository for accessing daily history data.
+ */
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
     private val historyRepository: DailyHistoryRepository
-): ViewModel() {
+) : ViewModel() {
 
+    // Mutable state to hold the current state of the history screen
     var state by mutableStateOf(HistoryState())
-    private set
+        private set
 
+    /**
+     * Initializes the data by fetching histories from the repository.
+     * This function is called when the app is resumed.
+     */
     fun initData() {
         viewModelScope.launch {
-            historyRepository.getHistories().let {
+            historyRepository.getHistories().let { histories ->
                 state = state.copy(
-                    histories = it
+                    histories = histories
                 )
             }
         }

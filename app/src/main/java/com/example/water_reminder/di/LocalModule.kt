@@ -11,10 +11,19 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Dagger Hilt module for providing local database dependencies.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object LocalModule {
 
+    /**
+     * Provides the singleton instance of the local database.
+     *
+     * @param context The application context.
+     * @return The singleton instance of the local database.
+     */
     @Provides
     @Singleton
     fun providesDatabase(
@@ -27,6 +36,12 @@ object LocalModule {
         ).build()
     }
 
+    /**
+     * Provides the DAO (Data Access Object) for daily drink history.
+     *
+     * @param appDatabase The local database instance.
+     * @return The DAO for daily drink history.
+     */
     @Provides
     @Singleton
     fun providesDailyHistoryDao(appDatabase: AppDatabase): DailyDrinkDAO {

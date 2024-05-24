@@ -21,6 +21,13 @@ import kotlinx.coroutines.withContext
 import kotlin.math.PI
 import kotlin.math.sin
 
+/**
+ * Composable function to display a box with animated waves.
+ *
+ * @param modifier The modifier for the [BoxWithConstraints].
+ * @param color The color of the waves.
+ * @param progress The progress of the wave animation, from 0 to 1.
+ */
 @Composable
 fun WavesAnimationBox(
     modifier: Modifier,
@@ -58,6 +65,12 @@ fun WavesAnimationBox(
     }
 }
 
+/**
+ * Draws the waves on a Canvas.
+ *
+ * @param shader The shader for drawing the waves.
+ * @param progress The progress of the wave animation, from 0 to 1.
+ */
 @Composable
 private fun WavesOnCanvas(shader: Shader, progress: Float) {
     val matrix = remember { Matrix() }
@@ -85,6 +98,11 @@ private fun WavesOnCanvas(shader: Shader, progress: Float) {
     }
 }
 
+/**
+ * Remembers and produces the transition values for the wave animation.
+ *
+ * @return A [WavesTransition] object containing the transition values.
+ */
 @Composable
 private fun rememberWavesTransition(): WavesTransition {
     val transition = rememberInfiniteTransition()
@@ -120,6 +138,14 @@ private fun rememberWavesTransition(): WavesTransition {
     }
 }
 
+/**
+ * Creates a shader for drawing the waves.
+ *
+ * @param width The width of the canvas.
+ * @param height The height of the canvas.
+ * @param color The color of the waves.
+ * @return A shader for drawing the waves.
+ */
 @Stable
 private fun createsWaveShader(width: Int, height: Int, color: Color): Shader {
     val angularFrequency = 2F * PI / width
@@ -162,6 +188,12 @@ private fun createsWaveShader(width: Int, height: Int, color: Color): Shader {
     return ImageShader(image = bitmap, tileModeX = TileMode.Repeated, tileModeY = TileMode.Clamp)
 }
 
+/**
+ * Data class to hold the transition values for wave animation.
+ *
+ * @property wavesShiftRatio The transition value for wave shift.
+ * @property amplitudeRatio The transition value for wave amplitude.
+ */
 private class WavesTransition(
     val wavesShiftRatio: State<Float>,
     val amplitudeRatio: State<Float>

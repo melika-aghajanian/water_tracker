@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'com.github.ben-manes.versions'
+    id 'org.jetbrains.dokka'
 }
 
 apply from: "$rootProject.projectDir/scripts/quality/dokka.gradle"

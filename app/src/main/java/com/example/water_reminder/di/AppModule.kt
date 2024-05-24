@@ -9,10 +9,19 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Dagger Hilt module for providing application-wide dependencies.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    /**
+     * Provides a custom worker factory for creating workers with injected dependencies.
+     *
+     * @param repository The repository for accessing daily history data.
+     * @return A WorkerFactory instance.
+     */
     @Provides
     @Singleton
     fun providesCustomWorkerFactory(

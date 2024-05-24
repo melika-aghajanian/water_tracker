@@ -22,7 +22,6 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.water_reminder.R
 import com.example.water_reminder.data.models.DrinkType
 import com.example.water_reminder.ui.components.*
-
 import com.example.water_reminder.utils.Constants.ANALYTICS_ADD_WATER
 import com.example.water_reminder.utils.Constants.ANALYTICS_OTHER_OPTION
 import com.example.water_reminder.utils.Constants.ANALYTICS_REDUCE_WATER
@@ -32,12 +31,18 @@ import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.launch
 import java.util.*
-
 import androidx.compose.runtime.Composable
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.DisposableEffect
 
+/**
+ * Composable function for displaying the home screen of the water reminder app.
+ *
+ * @param viewModel The ViewModel for managing the state and logic of the home screen.
+ * @param lifecycleOwner The lifecycle owner for observing lifecycle events.
+ * @param analytics The FirebaseAnalytics instance for logging events.
+ */
 @ExperimentalMaterialApi
 @Composable
 fun HomeScreen(
@@ -59,7 +64,6 @@ fun HomeScreen(
                     viewModel.initDrinkType()
                     viewModel.initData()
                 }
-
                 else -> {}
             }
         }
@@ -159,6 +163,12 @@ fun HomeScreen(
     }
 }
 
+/**
+ * Composable function for displaying the content of the bottom sheet.
+ *
+ * @param drinkTypes A list of available drink types.
+ * @param onOptionClicked Callback function to be invoked when a drink type is selected.
+ */
 @Composable
 fun BottomSheetContent(
     drinkTypes: List<DrinkType>,
@@ -186,6 +196,14 @@ fun BottomSheetContent(
     }
 }
 
+/**
+ * Composable function for displaying the main screen content.
+ *
+ * @param state The state of the home screen.
+ * @param snackBarHostState The state of the SnackbarHost.
+ * @param onOptionClicked Callback function to be invoked when a drink type is selected.
+ * @param onOtherOptionClicked Callback function to be invoked when the other option is selected.
+ */
 @Composable
 fun MainScreen(
     state: HomeState,
@@ -248,6 +266,13 @@ fun MainScreen(
     }
 }
 
+/**
+ * Composable function for displaying a list of drink options.
+ *
+ * @param drinkTypes A list of available drink types.
+ * @param onOptionClicked Callback function to be invoked when a drink type is selected.
+ * @param onOtherOptionClicked Callback function to be invoked when the other option is selected.
+ */
 @Composable
 private fun OptionList(
     drinkTypes: List<DrinkType>?,
@@ -281,4 +306,3 @@ private fun OptionList(
         )
     }
 }
-

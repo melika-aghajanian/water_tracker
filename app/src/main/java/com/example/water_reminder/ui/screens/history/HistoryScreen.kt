@@ -18,36 +18,50 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.water_reminder.ui.components.HistoryItem
 import com.example.water_reminder.utils.DateFormatter
 
+/**
+ * Composable function for displaying the history screen, showing the user's water intake history.
+ *
+ * @param lifecycleOwner The lifecycle owner for observing lifecycle events.
+ * @param viewModel The view model for managing data and UI logic.
+ */
 @Composable
 fun HistoryScreen(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     viewModel: HistoryViewModel = hiltViewModel()
 ) {
+    // Observe the state from the view model
     val state = viewModel.state
 
+    // Set up a disposable effect to observe lifecycle events
     DisposableEffect(lifecycleOwner) {
         val lifecycle = lifecycleOwner.lifecycle
-        val observer = LifecycleEventObserver { _, e ->
-            when (e) {
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
                 Lifecycle.Event.ON_RESUME -> {
+                    // When the app is resumed, initialize data
                     viewModel.initData()
                 }
-
                 else -> {}
             }
         }
 
+        // Add observer to the lifecycle
         lifecycle.addObserver(observer)
+
+        // Remove observer when effect is disposed
         onDispose {
             lifecycle.removeObserver(observer)
         }
     }
 
+    // Column composable for arranging UI elements vertically
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
+        // Display the top bar with "History" text
         HistoryPageTopBar()
 
+        // If there are histories available, display them using LazyColumn
         state.histories?.let { histories ->
             LazyColumn {
                 items(
@@ -56,6 +70,7 @@ fun HistoryScreen(
                         it.id ?: 0
                     }
                 ) {
+                    // For each history item, display it using HistoryItem composable
                     HistoryItem(
                         date = DateFormatter.formatDateToString(it.date),
                         value = it.totalAmount.toString()
@@ -66,6 +81,9 @@ fun HistoryScreen(
     }
 }
 
+/**
+ * Composable function for displaying the top bar of the history screen.
+ */
 @Composable
 fun HistoryPageTopBar() {
     Text(

@@ -14,6 +14,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.example.water_reminder.theme.WaterReminderTheme
 
+/**
+ * Composable function for rendering a dialog to edit a value.
+ *
+ * @param title The title of the dialog.
+ * @param value The current value to be edited.
+ * @param onSubmit The callback to be invoked when submitting the edited value.
+ * @param onDismiss The callback to be invoked when dismissing the dialog.
+ */
 @Composable
 fun DialogEditValue(
     title: String,
@@ -93,6 +101,9 @@ fun DialogEditValue(
     }
 }
 
+/**
+ * Preview function for the DialogEditValue composable.
+ */
 @Preview
 @Composable
 fun DialogEditValuePreview() {
