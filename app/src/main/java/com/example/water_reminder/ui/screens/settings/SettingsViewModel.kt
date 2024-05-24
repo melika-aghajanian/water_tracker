@@ -26,7 +26,6 @@ class SettingsViewModel @Inject constructor(
     private fun initData() {
         val userName = SharedPrefHelper.readString(SharedPrefHelper.PREF_USER_NAME, "")
         val workOut = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WORK_OUT,0)
-//        val dailyGoals = SharedPrefHelper.readInt(SharedPrefHelper.PREF_DAILY_GOAL, SharedPrefHelper.DEFAULT_DAILY_GOAL)
         val weight = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WEIGHT, 0)
         val height = SharedPrefHelper.readInt(SharedPrefHelper.PREF_HEIGHT, 0)
         val wakeUpTime = SharedPrefHelper.readString(SharedPrefHelper.PREF_WAKE_UP_TIME, "")
@@ -44,7 +43,6 @@ class SettingsViewModel @Inject constructor(
             sleepTime = sleepTime,
             reminderInterval = reminderInterval,
             dailyGoals = dailyGoals
-
         )
     }
 

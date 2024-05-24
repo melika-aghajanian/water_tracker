@@ -179,27 +179,3 @@ fun SettingsPageTopBar() {
         textAlign = TextAlign.Center
     )
 }
-
-@Preview
-@Composable
-fun SettingsScreenPreview() {
-    WaterReminderTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
-            SettingsScreen()
-        }
-    }
-}
-
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Composable
-fun SettingsScreenPreviewDarkMode() {
-    WaterReminderTheme {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colors.background)
-        ) {
-            SettingsScreen()
-        }
-    }
-}
