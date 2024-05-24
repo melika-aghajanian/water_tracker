@@ -13,7 +13,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val application: Application
-
 ) : ViewModel() {
     var state by mutableStateOf(SettingsState())
         private set
@@ -24,7 +23,7 @@ class SettingsViewModel @Inject constructor(
 
     private fun initData() {
         val userName = SharedPrefHelper.readString(SharedPrefHelper.PREF_USER_NAME, "")
-        val workOut = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WORK_OUT,0)
+        val workOut = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WORK_OUT, 0)
         val weight = SharedPrefHelper.readInt(SharedPrefHelper.PREF_WEIGHT, 0)
         val height = SharedPrefHelper.readInt(SharedPrefHelper.PREF_HEIGHT, 0)
         val wakeUpTime = SharedPrefHelper.readString(SharedPrefHelper.PREF_WAKE_UP_TIME, "")
@@ -32,6 +31,7 @@ class SettingsViewModel @Inject constructor(
         val reminderInterval = SharedPrefHelper.readInt(SharedPrefHelper.PREF_REMINDER_INTERVAL, 0)
 
         val dailyGoals = calculateDailyGoals(weight, workOut)
+        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_DAILY_GOAL, dailyGoals) // Save calculated goals in SharedPref
 
         state = state.copy(
             userName = userName,
@@ -97,7 +97,7 @@ class SettingsViewModel @Inject constructor(
 
     private fun updateDailyGoals() {
         val newDailyGoals = calculateDailyGoals(state.weight, state.workOut)
+        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_DAILY_GOAL, newDailyGoals) // Save the updated goals in SharedPref
         state = state.copy(dailyGoals = newDailyGoals)
     }
-
 }
