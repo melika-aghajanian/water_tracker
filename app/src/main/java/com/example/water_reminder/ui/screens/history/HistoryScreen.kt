@@ -81,30 +81,3 @@ fun HistoryPageTopBar() {
         textAlign = TextAlign.Center
     )
 }
-
-@Preview
-@Composable
-fun HistoryScreenPreview() {
-    WaterReminderTheme {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            HistoryScreen()
-        }
-    }
-}
-
-@Preview(uiMode = UI_MODE_NIGHT_YES)
-@Composable
-fun HistoryScreenPreviewDarkMode() {
-    WaterReminderTheme {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            HistoryScreen()
-        }
-    }
-}
-
