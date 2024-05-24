@@ -1,19 +1,14 @@
 package com.example.water_reminder.ui.screens.settings
 
-import android.content.res.Configuration
 import androidx.compose.runtime.*
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.water_reminder.R
-import com.example.water_reminder.notification.NotificationReceiver
-import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.ui.components.DialogEditValue
 import com.example.water_reminder.ui.components.Setting
 import com.example.water_reminder.ui.components.SettingHeader

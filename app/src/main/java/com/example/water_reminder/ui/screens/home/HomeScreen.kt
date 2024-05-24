@@ -1,6 +1,5 @@
 package com.example.water_reminder.ui.screens.home
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -15,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
@@ -23,7 +21,6 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import com.example.water_reminder.R
 import com.example.water_reminder.data.models.DrinkType
-import com.example.water_reminder.theme.WaterReminderTheme
 import com.example.water_reminder.ui.components.*
 
 import com.example.water_reminder.utils.Constants.ANALYTICS_ADD_WATER
@@ -38,7 +35,6 @@ import java.util.*
 
 import androidx.compose.runtime.Composable
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.DisposableEffect
 

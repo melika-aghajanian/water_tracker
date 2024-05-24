@@ -7,7 +7,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.water_reminder.notification.NotificationReceiver
 import com.example.water_reminder.utils.SharedPrefHelper
-import dagger.hilt.android.internal.Contexts.getApplication
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
