@@ -58,7 +58,7 @@ class SettingsViewModel @Inject constructor(
     }
 
     fun saveNewWorkOut(newWorkOut: Int) {
-        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_DAILY_GOAL, newWorkOut)
+        SharedPrefHelper.saveInt(SharedPrefHelper.PREF_WORK_OUT, newWorkOut)
         state = state.copy(workOut = newWorkOut)
         updateDailyGoals()
     }
