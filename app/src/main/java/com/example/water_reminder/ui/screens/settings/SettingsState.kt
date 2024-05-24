@@ -1,9 +1,5 @@
 package com.example.water_reminder.ui.screens.settings
 
-//data class SettingsState(
-//    val dailyGoals: Int = SharedPrefHelper.DEFAULT_DAILY_GOAL
-//)
-
 data class SettingsState(
     val userName: String = "",
     val workOut: Int = 0,
