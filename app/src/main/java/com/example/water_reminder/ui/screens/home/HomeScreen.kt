@@ -286,31 +286,3 @@ private fun OptionList(
     }
 }
 
-@ExperimentalMaterialApi
-@Preview
-@Composable
-fun HomeScreenPreview() {
-    WaterReminderTheme {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            HomeScreen()
-        }
-    }
-}
-
-@ExperimentalMaterialApi
-@Preview(uiMode = UI_MODE_NIGHT_YES)
-@Composable
-fun HomeScreenPreviewDarkMode() {
-    WaterReminderTheme {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            HomeScreen()
-        }
-    }
-}
-
